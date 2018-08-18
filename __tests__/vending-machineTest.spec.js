@@ -1,4 +1,5 @@
 const VendingMachine = require("../lib/vending-machine");
+
 let exampleGoodsFull = [
   { 1: { Skittles: { price: 1.5, count: 2 } } },
   { 2: { Lays: { price: 4, count: 3 } } },
@@ -127,6 +128,10 @@ describe("vendingMachine", () => {
       vM.refillGood(4);
       expect(vM.goods[3][4]["SourGummies"].count).toEqual(5);
     });
+    it("should return an error when a slotNumber doesn't exist", () => {
+      const vM = new VendingMachine(exampleGoodsFull, changeDefault);
+      expect(vM.refillGood(100)).toEqual("no slot exists");
+    });
   });
 
   describe("when we want to insert a new good", () => {
@@ -134,25 +139,32 @@ describe("vendingMachine", () => {
       it("should add the new product to an empty slot", () => {
         const vM = new VendingMachine(exampleGoods, changeDefault);
         expect(vM.goods[4][5]).toEqual({});
-        vM.addGood({ Gobstopper: { price: 2.5, count: 10 } });
+        vM.addGood("Gobstopper", 2.5, 10);
         expect(vM.goods[4][5]).toEqual({
           Gobstopper: { price: 2.5, count: 10 }
         });
       });
     });
+
     describe("If there are no slots available", () => {
       it("it should return error no empty slots when using the add function", () => {
         const vM = new VendingMachine(exampleGoodsFull, changeDefault);
-        expect(vM.addGood({ Gobstopper: { price: 2.5, count: 10 } })).toEqual(
+        expect(vM.addGood("Gobstopper", 2.5, 10)).toEqual(
           "all slots are full, please select an item to replace"
         );
       });
       it("should replace a product on the slot", () => {
         const vM = new VendingMachine(exampleGoodsFull, changeDefault);
-        vM.replaceGood(9, { GummyBears: { price: 0.5, count: 20 } });
+        vM.replaceGood(9, "GummyBears", 0.5, 20);
         expect(vM.goods[8][9]).toEqual({
           GummyBears: { price: 0.5, count: 20 }
         });
+      });
+      it("should return an error when a slotNumber doesn't exist", () => {
+        const vM = new VendingMachine(exampleGoodsFull, changeDefault);
+        expect(vM.replaceGood(100, "GummyBears", 0.5, 20)).toEqual(
+          "no slot exists"
+        );
       });
     });
   });
