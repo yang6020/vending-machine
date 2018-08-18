@@ -1,0 +1,26 @@
+{
+  "name": "vending-machine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yang6020/vending-machine.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yang6020/vending-machine/issues"
+  },
+  "homepage": "https://github.com/yang6020/vending-machine#readme",
+  "devDependencies": {
+    "jest-cli": "^23.5.0"
+  }
+}
