@@ -124,7 +124,7 @@ describe("vendingMachine", () => {
     it("should return count+5 of that good", () => {
       const vM = new VendingMachine(exampleGoods, changeDefault);
       expect(vM.goods[3][4]["SourGummies"].count).toEqual(0);
-      vM.refillGood("SourGummies");
+      vM.refillGood(4);
       expect(vM.goods[3][4]["SourGummies"].count).toEqual(5);
     });
   });
