@@ -1,7 +1,9 @@
 **Vending Machine**
+
 a 10 slot vending machine
 
 **Functionalities:**
+
 able to add,remove,refill, and replace an item in a slot
 able to purchase an item and return change (with the smallest amount of coin)
 able to refill change
