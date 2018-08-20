@@ -1,4 +1,4 @@
-##Vending Machine
+**Vending Machine**
 a 10 slot vending machine
 
 **Functionalities:**
