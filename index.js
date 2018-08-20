@@ -1,5 +1,3 @@
-const VendingMachine = require("./lib/vending-machine");
-
 let exampleGoods = [
   { 1: { Skittles: { price: 1.5, count: 2 } } },
   { 2: { Lays: { price: 4, count: 3 } } },
@@ -12,13 +10,13 @@ let exampleGoods = [
   { 9: {} },
   { 10: {} }
 ];
-
-let changeDefault = [
+let exampleChange = [
   { coinType: "toonie", count: 5, value: 2 },
   { coinType: "loonie", count: 10, value: 1 },
   { coinType: "quarter", count: 10, value: 0.25 },
   { coinType: "dime", count: 10, value: 0.1 },
   { coinType: "nickel", count: 10, value: 0.05 }
 ];
+const vendingMachine = new VendingMachine(exampleGoods, exampleChange);
 
-const VMachine = new VendingMachine(exampleGoods, changeDefault);
+module.exports = vendingMachine;
