@@ -4,6 +4,8 @@ a 10 slot vending machine
 
 ![Vending Machine](./ss.png?raw=true/"Title")
 
+**Setup**
+
 - download the repo
 - npm install
 - npx jest vending-machine
