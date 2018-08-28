@@ -4,6 +4,10 @@ a 10 slot vending machine
 
 ![Vending Machine](./ss.png?raw=true/"Title")
 
+- download the repo
+- npm install
+- npx jest vending-machine
+
 **Functionalities:**
 
 able to add,remove,refill, and replace an item in a slot
