@@ -2,6 +2,8 @@
 
 a 10 slot vending machine
 
+![Vending Machine](./ss.png?raw=true/"Title")
+
 **Functionalities:**
 
 able to add,remove,refill, and replace an item in a slot
